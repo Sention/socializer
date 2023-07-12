@@ -1,3 +1,18 @@
 .topnav {
-    background-color: black;
+    background-color: grey;
+    font-style: italic;
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+}
+
+.topnav img {
+    position: relative;
+    height: 4vh;
+    border: 10px;
+}
+
+.topnav img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
