@@ -32,6 +32,7 @@
     font-family: "montserrar", sans-serif;
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 10px 10px 10px rgb(73, 73, 73);
     background-color: black;
     transition: transform 0.3s ease;
 }
@@ -67,6 +68,7 @@
     background-color: black;
     padding: 20px;
     border-radius: 20px;
+    box-shadow: 10px 10px 10px rgb(73, 73, 73);
     transition: transform 0.4s ease;
 }
 
@@ -74,5 +76,4 @@
 .title a:hover {
     transform: scale(1.1);
     transition: transform 0.4s ease;
-    color: #FF0000;
 }
