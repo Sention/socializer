@@ -1,5 +1,9 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
 .topnav {
-    background-color: grey;
     font-style: italic;
     color: aliceblue;
     display: flex;
@@ -11,7 +15,6 @@
 .topnav img {
     position: relative;
     height: 5vh;
-    border: 10px;
     transition: transform 0.3s ease;
 }
 
