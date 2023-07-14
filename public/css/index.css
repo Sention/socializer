@@ -26,13 +26,14 @@
 }
 
 .title h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: bold;
     font-size: 46px;
     color: rgb(237, 239, 240);
     text-align: center;
     flex: 1;
 }
+
 
 .circle {
     position: relative; 
