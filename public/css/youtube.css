@@ -4,13 +4,13 @@
     color: aliceblue;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .topnav img {
-    flex: 1;
     position: relative;
     height: 5vh;
-    width: 5vh;
     border: 10px;
     transition: transform 0.3s ease;
 }
@@ -21,7 +21,6 @@
 }
 
 .topnav a {
-    flex: 2;
     position: relative;
     text-align: center;
     text-decoration: none;
