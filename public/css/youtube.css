@@ -8,11 +8,38 @@
 
 .topnav img {
     position: relative;
-    height: 4vh;
+    height: 5vh;
     border: 10px;
+    transition: transform 0.3s ease;
 }
 
 .topnav img:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
+}
+
+.topnav a {
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: white;
+    background-color: black;
+    transition: transform 0.3s ease;
+}
+
+.topnav a:visited {
+    color: white;
+}
+
+.topnav a:active {
+    color: white;
+}
+
+.topnav a:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    color: #FF0000;
 }
