@@ -28,6 +28,7 @@
 }
 
 .topnav a {
+    color: white;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -35,14 +36,14 @@
     font-family: "montserrar", sans-serif;
     border-radius: 10px;
     padding: 10px;
+    margin: 4px;
     box-shadow: 10px 10px 10px rgb(73, 73, 73);
     background-color: black;
     transition: transform 0.3s ease;
 }
 
-.topnav a:visited,
 .topnav a:active {
-    color: white;
+    color: blue;
 }
 
 .topnav a:hover {
