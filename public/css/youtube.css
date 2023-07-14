@@ -13,7 +13,6 @@
 }
 
 .topnav img {
-    position: relative;
     height: 5vh;
     transition: transform 0.3s ease;
 }
@@ -24,7 +23,6 @@
 }
 
 .topnav a {
-    position: relative;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -37,10 +35,7 @@
     transition: transform 0.3s ease;
 }
 
-.topnav a:visited {
-    color: white;
-}
-
+.topnav a:visited,
 .topnav a:active {
     color: white;
 }
