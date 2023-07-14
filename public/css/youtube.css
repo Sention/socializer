@@ -13,10 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .topnav img {
+    background: transparent;
     image-rendering: auto;
+    filter: drop-shadow(7px 7px 7px rgb(250, 82, 82));
     height: 5vh;
     transition: transform 0.3s ease;
 }
@@ -37,7 +40,7 @@
     border-radius: 10px;
     padding: 10px;
     margin: 4px;
-    box-shadow: 10px 10px 10px rgb(73, 73, 73);
+    box-shadow: 7px 7px 7px rgb(73, 73, 73);
     background-color: black;
     transition: transform 0.3s ease;
 }
