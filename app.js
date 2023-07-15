@@ -14,7 +14,9 @@ app.get('/', (req, res) => {
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] }));
 
-
+app.get('/protected/yotube.html', (req, res) => {
+    res.send('Logged in!');
+});
 
 
 //Listening to the server
