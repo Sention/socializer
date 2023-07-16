@@ -4,6 +4,14 @@ const path = require('path');
 
 require('./routes/auth.js');
 
+function isLoggedIn(req, res, next) {
+    if(req.user){
+        return next();
+    } else {
+        return res.sendStatus(401);
+    }
+}
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/public')));
@@ -16,7 +24,7 @@ app.get('/', (req, res) => {
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] }));
 
-app.get('/protected', (req, res) => {
+app.get('/protected',isLoggedIn, (req, res) => {
     res.send('Logged in!');
 });
 
