@@ -1,8 +1,11 @@
 const express = require('express');
+const session = require('express-session');
 const passport = require('passport');
 const path = require('path');
 
 require('./routes/auth.js');
+
+const SESSION_SECRET = 'cats';
 
 function isLoggedIn(req, res, next) {
     if(req.user){
@@ -13,6 +16,14 @@ function isLoggedIn(req, res, next) {
 }
 
 const app = express();
+app.use(session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {secure: true}
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/views')));
