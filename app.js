@@ -2,6 +2,8 @@ const express = require('express');
 const passport = require('passport');
 const path = require('path');
 
+require('./routes/auth.js');
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/public')));
