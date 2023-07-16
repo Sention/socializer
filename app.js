@@ -39,7 +39,7 @@ app.get('/protected',isLoggedIn, (req, res) => {
     res.send('Logged in!');
 });
 
-app.get('/google/callback',
+app.get('/auth/example/callback',
 passport.authenticate('google', {
     successRedirect: '/protected',
     failureRedirect: '/auth/failure'
