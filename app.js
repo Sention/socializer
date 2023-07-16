@@ -20,6 +20,15 @@ app.get('/protected', (req, res) => {
     res.send('Logged in!');
 });
 
+app.get('/google/callback',
+passport.authenticate('google', {
+    successRedirect: '/protected',
+    failureRedirect: '/auth/failure'
+}));
+
+app.get('/auth/failure', (req,res) => {
+    res.send('Something went wrong...');
+});
 
 //Listening to the server
 app.listen(3000, () => console.log('listening on 3000'));
