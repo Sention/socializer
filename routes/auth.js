@@ -10,7 +10,8 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:3000/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
-    return cb(err, user);
+    //set it to err if I have a database
+    return cb(null, profile);
   }
 ));
 
