@@ -10,6 +10,14 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:3000/auth/example/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
-    return document(err, user);
+    return cb(err, user);
   }
 ));
+
+passport.serializeUser(function(user, cb) {
+     return cb(null, user);
+});
+
+passport.deserializeUser(function(user, cb) {
+    return cb(null, user);
+}); 
