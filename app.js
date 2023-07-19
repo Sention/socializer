@@ -3,26 +3,20 @@ const session = require('express-session');
 const passport = require('passport');
 const path = require('path');
 
-require('./routes/auth.js');
-
-const SESSION_SECRET = 'cats';
+require('./routes/auth');
 
 function isLoggedIn(req, res, next) {
-    if(req.user){
-        return next();
-    } else {
-        return res.sendStatus(401);
-    }
+    req.user ? next() : res.sendStatus(401);
 }
 
 const app = express();
-app.use(session({
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {secure: true}
-}));
 
+app.use(session({
+    secret: 'dog',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure: false}
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -30,23 +24,23 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/views')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'/views', 'index.html'));
+    res.sendFile('index.html');
 });
 
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['email','profile'] }));
 
-app.get('/protected',isLoggedIn, (req, res) => {
+app.get('/auth/google/callback',
+passport.authenticate('google', {
+    successRedirect: '/auth/protected',
+    failureRedirect: '/auth/google/failure'
+}));
+
+app.get('/auth/protected', isLoggedIn, (req, res) => {
     res.send('Logged in!');
 });
 
-app.get('/auth/google/callback',
-passport.authenticate('google', {
-    successRedirect: '/protected',
-    failureRedirect: '/auth/failure'
-}));
-
-app.get('/auth/failure', (req,res) => {
+app.get('/auth/google/failure', (req,res) => {
     res.send('Something went wrong...');
 });
 
