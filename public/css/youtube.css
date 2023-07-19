@@ -1,10 +1,12 @@
-* {
+html, body {
+    min-height: 100%;
+    height: auto;    
+    background: linear-gradient(black, red);
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    background-color: #6f0000;
-}
-
+    }
+    
 .topnav {
     position: absolute;
     left: 50%;
