@@ -22,6 +22,7 @@ app.use(session({
     saveUninitialized: false,
     cookie: {secure: true}
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -33,13 +34,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+  passport.authenticate('google', { scope: ['email','profile'] }));
 
 app.get('/protected',isLoggedIn, (req, res) => {
     res.send('Logged in!');
 });
 
-app.get('/auth/example/callback',
+app.get('/auth/google/callback',
 passport.authenticate('google', {
     successRedirect: '/protected',
     failureRedirect: '/auth/failure'
