@@ -6,7 +6,11 @@ const path = require('path');
 require('./routes/auth');
 
 function isLoggedIn(req, res, next) {
-    req.user ? next() : res.sendStatus(401);
+    if(req.user){
+        return next();
+    } else {
+        return res.sendStatus(401);
+    }
 }
 
 const app = express();
