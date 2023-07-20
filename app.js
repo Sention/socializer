@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
+const ejs = require('ejs');
 const path = require('path');
 
 require('./routes/auth');
@@ -41,7 +42,7 @@ passport.authenticate('google', {
 }));
 
 app.get('/auth/protected', isLoggedIn, (req, res) => {
-    res.send('Logged in!');
+    res.sendFile(path.join(__dirname, '/views/youtube.html'));
 });
 
 app.get('/auth/google/failure', (req,res) => {
