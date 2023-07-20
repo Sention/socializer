@@ -37,11 +37,11 @@ app.get('/auth/google',
 
 app.get('/auth/google/callback',
 passport.authenticate('google', {
-    successRedirect: '/auth/youtube',
+    successRedirect: '/auth/protected',
     failureRedirect: '/auth/google/failure'
 }));
 
-app.get('/auth/youtube', isLoggedIn, (req, res) => {
+app.get('/auth/protected', isLoggedIn, (req, res) => {
     res.sendFile(path.join(__dirname, '/views/youtube.html'));
 });
 
