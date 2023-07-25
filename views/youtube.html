@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube</title>
-    <link rel="stylesheet" href="../css/youtube.css">
+    <link rel="stylesheet" href="/css/youtube.css">
 </head>
 <body>
     <nav>
@@ -22,18 +22,6 @@
             <a id="loginLink" href="/auth/google">Login with Google</a>
         </div>
     </main>
-    <script>
-        fetch('/auth/protected')
-            .then(response => {
-                // If the response status is 200 (OK), the user is authenticated
-                if (response.ok) {
-                    const loginLink = document.getElementById('loginLink');
-                    loginLink.style.display = 'none';
-                }
-            })
-            .catch(error => {
-                console.error('Error checking authentication status:', error);
-            });
-    </script>
+    <script src="/public/js/youtube.js"></script>
 </body>
 </html>
