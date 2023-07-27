@@ -9,14 +9,24 @@ function removeButton() {
         })
         .catch(error => {
             console.error('Error checking authentication status:', error);
-        });
+        })
+    }
+
+
+function showUser() {
+    fetch('/auth/protected')
+        .then(response => {
+            if(response.ok){
+                const profile = document.createElement('h1'); 
+                profile.textContent = 'Welcome!';
+                const parentElement = document.querySelector('.title');
+                parentElement.appendChild(profile);
+            }
+        })
+        .catch(error => {
+            console.error("Can't display button", error);
+        })
     }
 
 removeButton();
-
-/* function showUser() {
-    fetch('auth/protected')
-        if(response.ok => {
-            const 
-        })
-} */
+showUser();
