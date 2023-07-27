@@ -19,8 +19,7 @@ function showUser() {
             if(response.ok){
                 const profile = document.createElement('h1'); 
                 profile.textContent = 'Welcome!';
-                const parentElement = document.querySelector('.title');
-                parentElement.appendChild(profile);
+                document.querySelector('.title').appendChild(profile);
             }
         })
         .catch(error => {
